@@ -25,6 +25,17 @@ public class ShipwreckStub {
 		return new ArrayList<Shipwreck>(wrecks.values());
 	}
 
+	public static List<Shipwreck> getValues(){
+			ArrayList<Shipwreck> dataBeanList = new ArrayList<Shipwreck>();
+			dataBeanList.add(new Shipwreck("English", 58));
+			dataBeanList.add(new Shipwreck("SocialStudies", 68));
+			dataBeanList.add(new Shipwreck("Maths", 38));
+			dataBeanList.add(new Shipwreck("Hindi", 88));
+			dataBeanList.add(new Shipwreck("Scince", 78));
+			return dataBeanList;
+
+	}
+
 	public static Shipwreck create(Shipwreck wreck) {
 		idIndex += idIndex;
 		wreck.setId(idIndex);

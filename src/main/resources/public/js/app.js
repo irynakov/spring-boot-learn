@@ -43,7 +43,8 @@
 				templateUrl: viewsPrefix + "home.html",
 				data: {
 					pageTitle: 'Home'
-				}
+				},
+				controller: 'HomeController'
 			})
 			.state('shipwrecks',{
 	        url:'/shipwrecks',

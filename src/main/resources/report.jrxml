@@ -1,0 +1,129 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="jasper_report_template" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <parameter name="ReportTitle" class="java.lang.String"/>
+    <parameter name="Author" class="java.lang.String"/>
+    <queryString></queryString>
+    <field name="name" class="java.lang.String">
+        <fieldDescription>name</fieldDescription>
+    </field>
+    <field name="marks" class="java.lang.Integer">
+        <fieldDescription>marks</fieldDescription>
+    </field>
+    <title>
+        <band height="70">
+            <line>
+                <reportElement x="0" y="0" width="515" height="1"/>
+            </line>
+            <textField isBlankWhenNull="true" bookmarkLevel="1">
+                <reportElement x="0" y="10" width="515" height="30"/>
+                <textElement textAlignment="Center">
+                    <font size="22"/>
+                </textElement>
+                <textFieldExpression class="java.lang.String">$P{ReportTitle}</textFieldExpression>
+                <anchorNameExpression>"Title"</anchorNameExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="0" y="40" width="515" height="20"/>
+                <textElement textAlignment="Center">
+                    <font size="10"/>
+                </textElement>
+                <textFieldExpression class="java.lang.String">$P{Author}</textFieldExpression>
+            </textField>
+        </band>
+    </title>
+    <columnHeader>
+        <band height="23">
+            <staticText>
+                <reportElement mode="Opaque" x="0" y="3" width="535" height="15" backcolor="#70A9A9"/>
+                <box>
+                    <bottomPen lineWidth="1.0" lineColor="#CCCCCC"/>
+                </box>
+                <textElement/>
+                <text></text>
+            </staticText>
+            <staticText>
+                <reportElement x="414" y="3" width="121" height="15"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text>Marks</text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="3" width="136" height="15"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text>Subject</text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="16">
+            <staticText>
+                <reportElement mode="Opaque" x="0" y="0" width="535" height="14" backcolor="#E5ECF9"/>
+                <box>
+                    <bottomPen lineWidth="0.25" lineColor="#CCCCCC"/>
+                </box>
+                <textElement/>
+                <text></text>
+            </staticText>
+            <textField>
+                <reportElement x="414" y="0" width="121" height="15"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="9"/>
+                </textElement>
+                <textFieldExpression class="java.lang.String">$F{name}</textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="0" y="0" width="136" height="15"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression class="java.lang.String">$F{marks}</textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="200">
+            <barChart>
+                <chart evaluationTime="Report">
+                    <reportElement x="0" y="0" width="555" height="200"/>
+                    <chartTitle>
+                        <titleExpression>"My First JR Bar Chart"</titleExpression>
+                    </chartTitle>
+                </chart>
+                <categoryDataset>
+                    <dataset incrementType="None"/>
+                    <categorySeries>
+                        <seriesExpression>$F{name}</seriesExpression>
+                        <categoryExpression>$F{name}</categoryExpression>
+                        <valueExpression>$F{marks}</valueExpression>
+                    </categorySeries>
+                </categoryDataset>
+                <barPlot isShowTickMarks="false">
+                    <plot/>
+                </barPlot>
+            </barChart>
+        </band>
+    </columnFooter>
+    <pageFooter>
+        <band height="400" splitType="Stretch">
+            <pieChart>
+                <chart evaluationTime="Report">
+                    <reportElement x="135" y="0" width="270" height="300"/>
+                    <chartTitle>
+                        <titleExpression>"My First JR Pie Chart"</titleExpression>
+                    </chartTitle>
+                </chart>
+                <pieDataset>
+                    <dataset incrementType="None"/>
+                    <keyExpression>$F{name}</keyExpression>
+                    <valueExpression>$F{marks}</valueExpression>
+                </pieDataset>
+                <piePlot>
+                    <plot/>
+                    <itemLabel/>
+                </piePlot>
+            </pieChart>
+        </band>
+    </pageFooter>
+</jasperReport>

@@ -9,8 +9,14 @@ public class Shipwreck {
 	Double latitude;
 	Double longitude;
 	Integer yearDiscovered;
+	Integer marks;
 
 	public Shipwreck() { }
+
+	public Shipwreck(String name, Integer marks){
+		this.name = name;
+		this.marks = marks;
+	}
 
 	public Shipwreck(Long id, String name, String description, String condition, Integer depth, Double latitude, Double longitude, Integer yearDiscovered) {
 		this.id = id;
@@ -85,5 +91,13 @@ public class Shipwreck {
 
 	public void setYearDiscovered(Integer yearDiscovered) {
 		this.yearDiscovered = yearDiscovered;
+	}
+
+	public Integer getMarks() {
+		return marks;
+	}
+
+	public void setMarks(Integer marks) {
+		this.marks = marks;
 	}
 }
