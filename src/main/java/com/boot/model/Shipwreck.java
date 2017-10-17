@@ -18,7 +18,6 @@ public class Shipwreck {
   Double latitude;
   Double longitude;
   Integer yearDiscovered;
-  @Column(name="MARKS", columnDefinition="5")
   Integer marks;
 
   public Shipwreck() {

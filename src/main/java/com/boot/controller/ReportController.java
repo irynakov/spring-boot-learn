@@ -17,7 +17,7 @@ public class ReportController {
   @Autowired
   private ApplicationContext appContext;
 
-  @RequestMapping(value = "/report.pdf", method = RequestMethod.GET)
+  @RequestMapping(value = "report.pdf", method = RequestMethod.GET)
   public ModelAndView getReportPdf() {
 
 
